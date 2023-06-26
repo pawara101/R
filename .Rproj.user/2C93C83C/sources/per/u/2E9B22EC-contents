@@ -1,0 +1,21 @@
+set.seed(123)
+
+# for N~(7,0.75)
+mean1 <- 7
+std1 <- 0.75
+
+sample1 <-rnorm(10,mean = mean1,sd=std1)
+
+sample1
+
+# for N~(6,0.75)
+mean2 <- 6
+std2 <- 0.75
+
+sample2 <-rnorm(10,mean = mean2,sd=std2)
+sample2 
+
+mean_difference <- mean(sample1) - mean(sample2)
+mean_difference
+
+

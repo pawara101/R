@@ -1,0 +1,34 @@
+set.seed(789)  # Setting a seed for reproducibility
+
+# Initialize an empty vector to store the bootstrap mean differences
+bootstrap_means <- numeric(10000)
+
+# Perform bootstrap sampling and calculate mean differences
+for (i in 1:10000) {
+  # Resample with replacement from sample1
+  resampled_sample1 <- sample(sample1, replace = TRUE)
+  
+  # Resample with replacement from sample2
+  resampled_sample2 <- sample(sample2, replace = TRUE)
+  
+  # Calculate mean difference of resampled samples
+  bootstrap_means[i] <- mean(resampled_sample1) - mean(resampled_sample2)
+}
+
+# Print the first 10 mean differences in the bootstrap population
+head(bootstrap_means, 20)
+
+
+# Plot the histogram of the bootstrap mean differences
+hist(bootstrap_means, breaks = 30, col = "skyblue", border = "white",
+     xlab = "Mean Difference", ylab = "Frequency", main = "Bootstrap Mean Difference")
+
+# Add a vertical line at the observed mean difference
+abline(v = mean_difference, col = "red", lwd = 2)
+
+
+# Conducting two-sample t-test
+t_test <- t.test(sample1, sample2, alternative = "two.sided")
+
+# Print the t-test results
+t_test
