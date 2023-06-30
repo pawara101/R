@@ -28,7 +28,7 @@ arr1 <- array(c('nimal','saman','kumara'),dim = c(3,4,3))
 print(arr1)
 
 ### Factors
-col <- c('green','green','yellow','red','red','red','green')
+col <- c('green','green','yellow','red','#421a1a','red','green')
 fact_col <- factor(col)
 print(fact_col)
 
@@ -41,3 +41,20 @@ BMI <- 	data.frame(
    Age = c(42,38,26)
 )
 print(BMI)
+
+## Create another DataFrame
+
+print("New DF----")
+emp_data <- data.frame(
+   emp_id = c(1:5),
+   emp_name = c("Rick","Dan","Kumara","Ryan","Gary"),
+   salary = c(623.3,515.2,611.0,729.0,843.25), # nolint
+
+   start_date = as.Date(c("2012-01-01", "2013-09-23", "2014-11-15", "2014-05-11",
+      "2015-03-27")),
+   stringsAsFactors = FALSE
+)
+
+print(emp_data)
+
+
